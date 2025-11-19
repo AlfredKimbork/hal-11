@@ -1,0 +1,13 @@
+#page-nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+a[aria-current="true"] {
+    color: orange;
+}

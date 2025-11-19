@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="public/js/script.js" defer></script>
+    <link rel="manifest" href="public/manifest.json">
+    <link rel="shortcut icon" href="public/svg/logo-16x16.svg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="#">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('public/js/service-worker.js');
+            });
+        }
+    </script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="public/img/icons/logo-180x180.png" alt="">
+        <h1 class="app-heading">Hal 11</h1>
+    </header>
+    <main>
+        <nav id="page-nav">
+            <ul>
+
+            </ul>
+        </nav>
+
+        <section  class="main__section" id="section-1">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam?</p>
+        </section>
+        
+        <section class="main__section" id="section-2">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam?</p>
+
+        </section>
+
+        <section class="main__section" id="section-3">
+            <!-- <model-viewer 
+                camera-controls 
+                touch-action="pan-y" 
+                disable-pan 
+                environment-image="media/360-image.hdr" 
+                skybox-image="media/360-image.hdr" 
+                skybox-height="0.05m"
+                orientation="0deg -90deg 0deg"
+                shadow-intensity="2" 
+                max-camera-orbit="auto 90deg auto" 
+                alt="Container Living" 
+                src="media/LegoRacerbil.glb" 
+                style="width:100%; height:250px;" 
+                >
+            </model-viewer> -->
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam?</p>
+
+        </section>
+
+    </main>
+    <footer>
+        <a href="#1"></a>
+    </footer>
+    
+</body>
+</html>

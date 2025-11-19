@@ -1,0 +1,19 @@
+header {
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    right: .5rem;
+
+    height: 5rem;
+    background-color: #fefefe;
+
+    box-shadow: 0 0 1rem #bebebe;
+
+    padding-inline: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    max-height: 4.5rem;
+}

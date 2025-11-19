@@ -49,7 +49,7 @@ const scrollAnimation = new IntersectionObserver(entries =>{
         }); 
     });
 }, {
-    threshold: .6,
+    threshold: .5,
 });
 
 sections.forEach(section => {

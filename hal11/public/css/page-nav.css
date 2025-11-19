@@ -8,6 +8,18 @@
     transform: translateY(-50%);
 }
 
-a[aria-current="true"] {
-    color: orange;
+.square {
+    /* width: 1rem;
+    height: 1rem; */
+    border: .25rem solid orange;
+}
+
+[aria-current="true"] {
+    transform: rotateX(45deg);
+}
+
+span:last-child {
+    color: #000;
+    opacity: 0;
+    transition: .2s ease;
 }

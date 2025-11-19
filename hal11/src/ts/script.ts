@@ -12,11 +12,15 @@ const toggleAriaCurrent = (anchor: HTMLAnchorElement) => {
 pageNavItems = Array.from(sections).map((section, i) => {  
     let pageNavItem = document.createElement("li");
 
-    pageNavItem.innerHTML = `<a href="#section-${i + 1}">hello</a>`;
+    pageNavItem.innerHTML = `<a href="#section-${i + 1}"><span class="square"></span><span>section ${i + 1}</span></a>`;
     const anchor = pageNavItem.firstChild as HTMLAnchorElement;
 
     pageNavItem.setAttribute("id", `dot-${i + 1}`); // give anchor a class to access them later
     anchor.setAttribute("aria-current", 'true'); // give it accebility feature
+
+    let span = anchor.lastChild as HTMLElement
+    anchor.addEventListener("mouseover", () => span.style.opacity = '1');
+    anchor.addEventListener("mouseout", () => span.style.opacity = '0');
 
     pageNav.append(pageNavItem);
         

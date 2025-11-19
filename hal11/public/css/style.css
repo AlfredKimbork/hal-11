@@ -2,6 +2,11 @@
 @import url(./page-nav.css);
 @import url(./header.css);
 
+@font-face {
+    font-family: "Bernhard";
+    src: url(../../src/fonts/Bernhard\ Condensed\ Bold.otf);
+}
+
 * {
     scroll-behavior: smooth;
     margin: 0;
@@ -10,5 +15,7 @@
 
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    font-family: "Bernhard";
 }
 

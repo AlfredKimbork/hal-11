@@ -12,8 +12,36 @@ header {
     padding-inline: .5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    overflow: clip;
 }
 
 header img {
     max-height: 4.5rem;
+}
+
+div {
+    height: 100%;
+    display: flex;
+    gap: .25rem
+
+}
+
+.line {
+    width: 1.5rem;
+    height: 10rem;
+    background-color: #000;
+    transform: rotate(45deg) translate(-5rem);
+}
+
+header div:last-of-type .line {
+    transform: rotate(45deg) translate(1.5rem, -1.5rem);
+}
+.line:last-of-type {
+    background-color: #EC2128;
+}
+.line:first-of-type {
+    z-index: 1;
+    background-color: #FD0;
 }

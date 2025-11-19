@@ -14,14 +14,6 @@ pageNavItems = Array.from(sections).map((section, i) => {
     const anchor = pageNavItem.firstChild;
     pageNavItem.setAttribute("id", `dot-${i + 1}`); // give anchor a class to access them later
     anchor.setAttribute("aria-current", 'true'); // give it accebility feature
-    // pageNavItem.firstChild!.addEventListener("click", e => {
-    //     pageNavItems.forEach(() => {
-    //         const target = e.target as HTMLAnchorElement;
-    //         console.log(target)
-    //         anchor.setAttribute("aria-current", 'false');
-    //         target.setAttribute("aria-current", 'true');
-    //     })
-    // });
     pageNav.append(pageNavItem);
     // show position and disable prevBtn
     i == 0 ? toggleAriaCurrent(anchor) : "";

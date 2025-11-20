@@ -1,10 +1,12 @@
 @import url(./section.css);
 @import url(./page-nav.css);
 @import url(./header.css);
+@import url(./contact.css);
+@import url(./models.css);
 
 @font-face {
     font-family: "Bernhard";
-    src: url(../../src/fonts/Bernhard\ Condensed\ Bold.otf);
+    src: url(../../public/fonts/Bernhard\ Condensed\ Bold.otf);
 }
 
 * {
@@ -19,3 +21,23 @@
     font-family: "Bernhard";
 }
 
+.grid {
+    display: grid;
+}
+
+.--2-columns {
+    grid-template-columns: 1fr 1fr;
+}
+
+.--2-rows {
+    grid-template-rows: 2fr 1fr;
+}
+
+.--grid-gap {
+    gap: 1rem;
+}
+
+.--background {
+    background: linear-gradient(145deg,#cf0000 40%, #000000 40%, #000000 60%, #ffdd00 60%);
+    padding: .25rem;
+}

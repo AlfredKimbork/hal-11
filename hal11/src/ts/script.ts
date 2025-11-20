@@ -24,7 +24,6 @@ pageNavItems = Array.from(sections).map((section, i) => {
     anchor.addEventListener("touchstart", () => span.style.opacity = '1');
     anchor.addEventListener("touchend", () => span.style.opacity = '0');
 
-
     pageNav.append(pageNavItem);
         
     // show position and disable prevBtn
@@ -33,12 +32,10 @@ pageNavItems = Array.from(sections).map((section, i) => {
     return pageNavItem;
 });
 
-let i = 0
 const scrollAnimation = new IntersectionObserver(entries =>{
     entries.forEach(entry => {
         entry.target.classList.toggle("show", entry.isIntersecting);
         const id = entry.target.getAttribute("id")?.slice(8);
-        console.log(id)
         
         pageNavItems.forEach(pageNavItem =>{
             const anchor = pageNavItem.lastChild as HTMLAnchorElement;
@@ -55,3 +52,108 @@ const scrollAnimation = new IntersectionObserver(entries =>{
 sections.forEach(section => {
     scrollAnimation.observe(section);
 });
+
+// show models
+const models = document.querySelectorAll(".model-viewer") as NodeListOf<HTMLDivElement>;
+
+models.forEach(model => {
+    model.addEventListener("click", e => {
+        models.forEach(model => model.parentElement!.classList.remove("current"))
+        const target = e.target as HTMLDivElement;
+        target.parentElement!.classList.add("current")
+    })
+})
+
+// validate
+const validate = (event: any) => {
+    event.preventDefault()
+    
+    let form = event.target;
+    const checkEmail = (email: string) => {
+        let emailRegEx = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/; 
+        if (emailRegEx.test(email)){ 
+    return true; 
+        } 
+        return false; 
+    }
+
+    if(!form.name.value) {
+        form.name.setCustomValidity("Udfyld dit navn!")
+        form.name.nextElementSibling.innerText = form.name.validationMessage
+    } else {
+        form.name.setCustomValidity("")
+        form.name.nextElementSibling.innerText = form.name.validationMessage
+
+    }
+
+    if(!form.address.value) {
+        form.address.setCustomValidity("Udfyld din adresse!")
+        form.address.nextElementSibling.innerText = form.address.validationMessage
+    } else {
+        form.address.setCustomValidity("")
+        form.address.nextElementSibling.innerText = form.address.validationMessage
+
+    }
+
+    if(!form.zip.value) {
+        form.zip.setCustomValidity("Udfyld dit postnummer!")
+        form.zip.nextElementSibling.innerText = form.zip.validationMessage
+
+    } else if(form.zip.value.length !== 4) {
+        form.zip.setCustomValidity("Udfyld dit postnummer!")
+        form.zip.nextElementSibling.innerText = form.zip.validationMessage
+
+    } else if(isNaN(form.zip.value)) {
+        form.zip.setCustomValidity("Udfyld dit postnummer!")
+        form.zip.nextElementSibling.innerText = form.zip.validationMessage
+
+    } else {
+        form.zip.setCustomValidity("")
+        form.zip.nextElementSibling.innerText = form.zip.validationMessage
+    }
+
+    if(!form.city.value) {
+        form.city.setCustomValidity("Udfyld din by!")
+        form.city.nextElementSibling.innerText = form.city.validationMessage
+
+    } else {
+        form.city.setCustomValidity("")
+        form.city.nextElementSibling.innerText = form.city.validationMessage
+
+    }
+
+    if(!form.email.value) {
+        form.email.setCustomValidity("Udfyld dit email!")
+        form.email.nextElementSibling.innerText = form.email.validationMessage
+        // alert(form.email.validationMessage);
+        form.email.focus()
+        // return false;
+
+    } else if(!checkEmail(form.email.value)){
+        form.email.setCustomValidity("Udfyld dit email!")
+        form.email.nextElementSibling.innerText = form.email.validationMessage
+        // alert(form.email.validationMessage);
+        form.email.focus()
+        // return false;
+
+    } else {
+        form.email.setCustomValidity("")
+        form.email.nextElementSibling.innerText = form.email.validationMessage
+        
+    }
+
+    if(!form.message.value) {
+        form.message.setCustomValidity("Skriv en besked!")
+        form.message.nextElementSibling.innerText = form.message.validationMessage
+        // alert(form.message.validationMessage);
+        form.message.focus()
+        // return false;
+
+    } else {
+        form.message.setCustomValidity("")
+        form.message.nextElementSibling.innerText = form.message.validationMessage
+
+    }
+
+    
+}

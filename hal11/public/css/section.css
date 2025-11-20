@@ -1,5 +1,8 @@
 section {
-    padding: 7.5rem 1rem;
+    margin-inline: max(2.5rem, (100% - 50rem) / 2);
+    padding-block: 7.5rem 3rem;
     height: 100dvh;
     font-size: 1.5rem;
+
+    border-bottom: 1px solid #bebebe;
 }

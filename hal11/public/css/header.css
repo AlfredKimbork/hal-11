@@ -1,8 +1,9 @@
 header {
     position: fixed;
+    z-index: 1;
     top: .5rem;
-    left: .5rem;
-    right: .5rem;
+    left: max(.5rem, (100% - 54.5rem) / 2);
+    right: max(.5rem, (100% - 54.5rem) / 2);
 
     height: 5rem;
     background-color: #fefefe;
@@ -21,7 +22,7 @@ header img {
     max-height: 4.5rem;
 }
 
-div {
+header div {
     height: 100%;
     display: flex;
     gap: .25rem
@@ -32,11 +33,11 @@ div {
     width: 1.5rem;
     height: 10rem;
     background-color: #000;
-    transform: rotate(45deg) translate(-5rem);
+    transform: rotate(45deg) translate(-5.25rem);
 }
 
 header div:last-of-type .line {
-    transform: rotate(45deg) translate(1.5rem, -1.5rem);
+    transform: rotate(45deg) translate(1.75rem, -1.5rem);
 }
 .line:last-of-type {
     background-color: #EC2128;

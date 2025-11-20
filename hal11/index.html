@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="public/css/style.css">
     <script src="public/js/script.js" defer></script>
     <link rel="manifest" href="public/manifest.json">
-    <link rel="shortcut icon" href="src/svg/logo-16x16.svg" type="image/x-icon">
-    <link rel="apple-touch-icon" href="#">
+    <link rel="shortcut icon" href="public/svg/logo-16x16.svg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="public/img/icons/logo-180x180.png">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -25,7 +25,7 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <a href="index.html"><img src="src/img/icons/logo-180x180.png" alt=""></a>
+        <a href="index.html"><img src="public/img/icons/logo-180x180.png" alt=""></a>
         <div class="diagonal">
             <div class="line"></div>
             <div class="line"></div>
@@ -39,16 +39,51 @@
             </ul>
         </nav>
 
-        <section  class="main__section" id="section-1">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam?</p>
-        </section>
-        
-        <section class="main__section" id="section-2">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam?</p>
-
-        </section>
-
-        <section class="main__section" id="section-3">
+        <section  class="main__section grid --2-columns --2-rows --grid-gap" id="section-1">
+            <div class="--background models current">
+                <model-viewer 
+                    class="model-viewer"
+                    camera-controls 
+                    touch-action="pan-y" 
+                    disable-pan 
+                    orientation="0deg -90deg 0deg"
+                    shadow-intensity="2" 
+                    max-camera-orbit="auto 90deg auto" 
+                    alt="Container Living" 
+                    src="public/img/models/house.glb"  
+                    style="height: 100%; width: 100%;"
+                >
+                </model-viewer>
+            </div>
+            <div class="--background models">
+                <model-viewer 
+                    class="model-viewer"
+                    camera-controls 
+                    touch-action="pan-y" 
+                    disable-pan 
+                    orientation="0deg -90deg 0deg"
+                    shadow-intensity="2" 
+                    max-camera-orbit="auto 90deg auto" 
+                    alt="Lego race car" 
+                    src="public/img/models/LegoRacerbil.glb" 
+                    style="height: 100%; width: 100%;"
+                >
+                </model-viewer>
+            </div>
+            <div class="--background models">
+                <model-viewer 
+                    class="model-viewer"
+                    camera-controls 
+                    touch-action="pan-y" 
+                    disable-pan 
+                    shadow-intensity="2" 
+                    max-camera-orbit="auto 90deg auto" 
+                    alt="concept for pipes" 
+                    src="public/img/models/pipes.glb" 
+                    style="height: 100%; width: 100%;"
+                >
+                </model-viewer>
+            </div>
             <!-- <model-viewer 
                 camera-controls 
                 touch-action="pan-y" 
@@ -64,8 +99,47 @@
                 style="width:100%; height:250px;" 
                 >
             </model-viewer> -->
+        </section>
+        
+        <section class="main__section" id="section-2">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam?</p>
 
+        </section>
+
+        <section class="main__section" id="section-3">
+            <fieldset>
+                <legend>Book forsamlingshuset!</legend>
+                <form action="" novalidate method="post" onSubmit="validate(event)">
+                    <div class="formgroup full-w">
+                        <label for="name">Navn:</label>
+                        <input type="text" name="name" id="name" placeholder="Fx. Jens Jensen" required>
+                    </div>
+                    <div class="formgroup full-w">
+                        <label for="address">Adresse:</label>
+                        <input type="text" name="address" id="address" placeholder="Fx. Pulsen 8" required>
+                    </div>
+                    <div class="formgroup">
+                        <label for="zip">Postnummer:</label>
+                        <input type="text" inputmode="numeric" pattern="[0-9]*" name="zip" id="zip" placeholder="Fx. 4000" required>
+                    </div>
+                    <div class="formgroup">
+                        <label for="city">By:</label>
+                        <input type="text" name="city" id="city" placeholder="Fx. Roskilde" required>
+                    </div>
+                    <div class="formgroup full-w">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Fx. jens@jensen.dk" required>
+                    </div>
+                    <div class="formgroup full-w">
+                        <label for="message">Besked:</label>
+                        <textarea name="message" id="message" placeholder="Valgfri besked" rows="5" required></textarea>
+                    </div>
+                    </div>
+                    <div class="button --background formgroup full-w inline">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </fieldset>
         </section>
 
     </main>

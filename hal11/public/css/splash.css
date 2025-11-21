@@ -1,0 +1,15 @@
+.splash-screen {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: url("../img/splash/splashscreen.svg");
+    background-color: #FFF9B4;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: all .4s ease-in-out;
+}

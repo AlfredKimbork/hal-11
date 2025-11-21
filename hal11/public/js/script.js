@@ -37,7 +37,7 @@ const scrollAnimation = new IntersectionObserver(entries => {
         });
     });
 }, {
-    threshold: .5,
+    threshold: .6,
 });
 sections.forEach(section => {
     scrollAnimation.observe(section);
@@ -132,3 +132,9 @@ const validate = (event) => {
         form.message.nextElementSibling.innerText = form.message.validationMessage;
     }
 };
+// remove splash
+const splashScreen = document.querySelector(".splash-screen");
+setTimeout(() => {
+    splashScreen.style.opacity = "0";
+    setTimeout(() => splashScreen.style.display = "none", 400);
+}, 1000);
